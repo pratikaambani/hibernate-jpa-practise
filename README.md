@@ -88,3 +88,13 @@ Main Notes: Basic Example, Annotations
 
 
 **Codebase**: initial setup, maven pom and dependencies
+
+Class: User
+
+@Entity: L8W8 persistence domain object, represents table in db
+@Table:
+@Id: Primary Key
+@GeneratedValue: Specify how we obtain value of primary key for perticular field()
+@Column:
+
+Class: HibernateUtil - Hibernate connectivity
