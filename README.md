@@ -1,6 +1,7 @@
 Hibernate
 
-
+Ch01|02:
+--------
 What is Hibernate:
 ORM Tool
 Used in data layer
@@ -71,3 +72,19 @@ Key Management(primary, ordered....)
 developer wise different implementation style
 potential for errors
 Too many open db connections would be disastrous
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+Ch03 : Getting Started
+--------
+
+first hibernate application: project hibernate-jpa-practise
+setup and configuration hibernate: xml and props
+mapping metadata for entity: annotations
+Use a session to perform persistence operations: transactions
+
+Main Notes: Basic Example, Annotations
+
+
+**Codebase**: initial setup, maven pom and dependencies
