@@ -31,8 +31,6 @@ new schema: ifinances
 
 add account in users
 pratika:ambani
-infinite:P@sswo.rd1
-
 
 ORM framework that implements JPA Specifications.
 JPA Specifications part of Java EE Platform, defines specifications for persisting data
@@ -98,3 +96,12 @@ Class: User
 @Column:
 
 Class: HibernateUtil - Hibernate connectivity
+
+dependency: mysql-connector-java
+hibernate.properties: un, pw, driver
+
+hibenate.connection.username=pratika
+hibenate.connection.password=ambani
+hibenate.connection.url=jdbc:mysql://localhost:3306/ifinances
+hibenate.connection.driver_class=com.mysql.jdbc.Driver
+hibenate.dialect=org.hibernate.dialect.MySQL5Dialect
