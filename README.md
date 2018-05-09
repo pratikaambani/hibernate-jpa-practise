@@ -105,3 +105,22 @@ hibenate.connection.password=ambani
 hibenate.connection.url=jdbc:mysql://localhost:3306/ifinances
 hibenate.connection.driver_class=com.mysql.jdbc.Driver
 hibenate.dialect=org.hibernate.dialect.MySQL5Dialect
+
+
+XML Based configuration
+
+    <session-factory>
+        <!--Database Settings-->
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/ifinances?useSSL=false</property>
+        <property name="hibernate.connection.username">partik</property>
+        <property name="hibernate.connection.password">password</property>
+        <!--SQL Dialect-->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <!--Echoes all SQL Statements-->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <!--PoJo Class-->
+        <mapping class="com.practise.hibernate.data.entities.User"/>
+    </session-factory>
+

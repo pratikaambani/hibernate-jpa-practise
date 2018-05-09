@@ -18,8 +18,11 @@ public class HibernateUtil {
             //Holds all hibernate specific properties
             //Holds all mapping information
             Configuration configuration = new Configuration();
-            configuration.addAnnotatedClass(User.class);
-            return configuration.buildSessionFactory(new StandardServiceRegistryBuilder().build());
+//          configuration.addAnnotatedClass(User.class);
+            return configuration
+                    .configure("hibernate.cfg.xml")
+                    .buildSessionFactory(new StandardServiceRegistryBuilder()
+                            .applySettings(configuration.getProperties()).build());
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException("Error while building Factory");
