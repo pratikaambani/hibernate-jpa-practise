@@ -306,3 +306,43 @@ They have typical hibernate lifecycle
    - Composite: Contains other fields in it : Address
    - Collection: Holds other value types : List<String>
 
+
+------------------------------------------------------------------------------------------------------------------------
+
+Ch05 : Composite and Collection Value Type Mappings
+----------------------------------------------------
+
+Provide mapping metadata for a composite value type
+Map a collection of basic value types
+Map a collection of composite value types
+
+Composite Value Type:
+Represents a group of values in a single Java Type
+Composite(Hibernate) == Embedded(JPA)
+They do not have id or table
+They are only persisted or queried in the context of its parent
+Data is embedded in source object's table
+
+Example:
+Bank has: id(@Id), name, List<String>(Collection), Address(Composite), mobileNumber
+
+
+- Collection Value Type:
+Can define collection of basic or composite value types
+They don't have unique identity
+
+@AttributeOverrides
+
+* For Collection Types
+@ElementCollection
+@CollectionTable(name, jointables)
+@JoinColumn
+
+- Mapping:
+@MapKeyColumn
+
+Composite + Collection
+@ElementCollection
+@CollectionTable(name="USER_ADDRESS", joinColumns=@JoinColumn(name="USER_ID"))
+List<Address> address = new ArrayList<Address>();
+
