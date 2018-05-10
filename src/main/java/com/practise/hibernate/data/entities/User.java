@@ -25,7 +25,7 @@ public class User {
     private Date birthDate;
 
     @Column(name = "EMAIL_ADDRESS")
-    private Date emailAddress;
+    private String emailAddress;
 
     @Column(name = "LAST_UPDATED_DATE")
     private Date lastUpdatedDate;
@@ -71,11 +71,11 @@ public class User {
         this.birthDate = birthDate;
     }
 
-    public Date getEmailAddress() {
+    public String getEmailAddress() {
         return emailAddress;
     }
 
-    public void setEmailAddress(Date emailAddress) {
+    public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
     }
 

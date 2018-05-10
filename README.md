@@ -124,3 +124,20 @@ XML Based configuration
         <mapping class="com.practise.hibernate.data.entities.User"/>
     </session-factory>
 
+
+Calling Perstance Methods
+retrieve session from SessionFactory and call persistance operations on that session
+
+Inserting data into Table: select * from finances_user;	
+ApplicationCallingPersistanceMethods.java
+
+        User user = new User();
+        user.setBirthDate(new Date());
+        user.setCreatedBy("Developer");
+        user.setCreatedDate(new Date());
+        user.setEmailAddress("send@sender.sending");
+        user.setFirstName("Sachin");
+        user.setLastName("Tendulkar");
+        user.setLastUpdatedDate(new Date());
+        user.setLastUpdatedBy("Pratik");
+
