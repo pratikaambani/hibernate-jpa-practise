@@ -269,3 +269,26 @@ Date and Time
 We have java.util.Date as well as java.sql.Date
 
 
+@Formula
+To dynamically assign value of column
+To derive a property based upon calculation performed at runtime
+
+Hibernate annotation
+`@Formula("lower(datediff(curdate(), birth_date)/365)")`
+
+    select
+        user0_.USER_ID as USER_ID1_0_0_,
+        user0_.BIRTH_DATE as BIRTH_DA2_0_0_,
+        user0_.CREATED_BY as CREATED_3_0_0_,
+        user0_.CREATED_DATE as CREATED_4_0_0_,
+        user0_.EMAIL_ADDRESS as EMAIL_AD5_0_0_,
+        user0_.FIRST_NAME as FIRST_NA6_0_0_,
+        user0_.LAST_NAME as LAST_NAM7_0_0_,
+        user0_.LAST_UPDATED_BY as LAST_UPD8_0_0_,
+        user0_.LAST_UPDATED_DATE as LAST_UPD9_0_0_,
+        lower(datediff(curdate(),
+        user0_.birth_date)/365) as formula0_0_ 
+    from
+        FINANCES_USER user0_ 
+    where
+        user0_.USER_ID=?

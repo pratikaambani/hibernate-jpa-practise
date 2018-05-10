@@ -3,6 +3,7 @@ package com.practise.hibernate.data;
 import com.practise.hibernate.data.entities.User;
 import org.hibernate.Session;
 
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -15,7 +16,7 @@ public class ApplicationCallingPersistanceMethods {
 
         User user = new User();
         user.setBirthDate(new Date());
-        user.setBirthDate(new Date());
+        user.setBirthDate(getMyBirthday());
         user.setCreatedBy("Developer");
         user.setCreatedDate(new Date());
         user.setEmailAddress("send@sender.sending");
@@ -28,15 +29,29 @@ public class ApplicationCallingPersistanceMethods {
         //ensures above things are written to database
         session.getTransaction().commit();
 
+        session.refresh(user);
+
+        System.out.println(user.getAge());
+
         //get operation
+/*
         session.beginTransaction();
         User dbUser = (User) session.get(User.class, user.getUserId());
         dbUser.setFirstName("UnSachin");
         session.update(dbUser);
         session.getTransaction().commit();
+*/
 
         session.close();
         HibernateUtil.getSessionFactory().close();
+    }
+
+    private static Date getMyBirthday() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.YEAR, 1991);
+        calendar.set(Calendar.MONTH, 1);
+        calendar.set(Calendar.DATE, 7);
+        return calendar.getTime();
     }
 }
 
