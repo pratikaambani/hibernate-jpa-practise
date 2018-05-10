@@ -75,7 +75,7 @@ Too many open db connections would be disastrous
 ------------------------------------------------------------------------------------------------------------------------
 
 Ch03 : Getting Started
---------
+----------------------
 
 first hibernate application: project hibernate-jpa-practise
 setup and configuration hibernate: xml and props
@@ -128,7 +128,7 @@ XML Based configuration
 Calling Perstance Methods
 retrieve session from SessionFactory and call persistance operations on that session
 
-Inserting data into Table: select * from finances_user;	
+Inserting data into Table: select * from finances_user;
 ApplicationCallingPersistanceMethods.java
 
         User user = new User();
@@ -141,3 +141,29 @@ ApplicationCallingPersistanceMethods.java
         user.setLastUpdatedDate(new Date());
         user.setLastUpdatedBy("Pratik");
 
+
+------------------------------------------------------------------------------------------------------------------------
+
+Ch04 : Basic Mapping Annotations
+--------------------------------
+
+JPA-Interfaces
+Hibernate-Implementation
+
+JPA Annotations-
+    Defined by JPA 2.0 Specification,
+    Provices standard API on which ORM Vendors should base their implementation,
+    package: javax.persistence
+
+Hibernate Annotations-
+    Provides features beyond the ones specified in JPA,
+    Couples application to Hibernate
+
+Anything you can do with JPA, you can do with Hibernate.
+means, you can not do everything that you can do with Hibernate
+
+
+Field vs Property Access:
+These are the two ways Hibernate can access the values(using fields and getters)
+
+Use @Access Annotation to define any of the two types
