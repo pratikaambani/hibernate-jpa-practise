@@ -292,3 +292,17 @@ Hibernate annotation
         FINANCES_USER user0_ 
     where
         user0_.USER_ID=?
+
+
+
+Basic Value Types:
+
+- Entity Types: have a db identity
+corresponds with a db row
+They have typical hibernate lifecycle
+
+- Value Types: don't have a db identity
+   - Basic: String, Long
+   - Composite: Contains other fields in it : Address
+   - Collection: Holds other value types : List<String>
+
