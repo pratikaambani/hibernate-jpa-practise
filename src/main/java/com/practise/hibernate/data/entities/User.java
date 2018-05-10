@@ -44,6 +44,17 @@ public class User {
     @Column(name = "CREATED_BY", updatable = false)
     private String createdBy;
 
+    @Transient
+    private boolean valid;
+
+    public boolean isValid() {
+        return valid;
+    }
+
+    public void setValid(boolean valid) {
+        this.valid = valid;
+    }
+
     public Long getUserId() {
         return userId;
     }

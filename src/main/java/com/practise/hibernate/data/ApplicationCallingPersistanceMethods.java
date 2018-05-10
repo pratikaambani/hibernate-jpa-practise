@@ -36,6 +36,7 @@ public class ApplicationCallingPersistanceMethods {
         session.getTransaction().commit();
 
         session.close();
+        HibernateUtil.getSessionFactory().close();
     }
 }
 
