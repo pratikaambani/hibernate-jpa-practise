@@ -263,3 +263,9 @@ Exception in thread "main" org.hibernate.exception.SQLGrammarException: could no
 	at org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.beforeTransactionCommit(JdbcTransaction.java:101)
 	at org.hibernate.engine.transaction.spi.AbstractTransactionImpl.commit(AbstractTransactionImpl.java:177)`
 	
+
+@Temporal
+Date and Time
+We have java.util.Date as well as java.sql.Date
+
+
