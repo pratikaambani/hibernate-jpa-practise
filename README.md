@@ -226,3 +226,12 @@ Upon using nullable=false, hibernate will only throw the exception
 	at org.hibernate.internal.SessionImpl.save(SessionImpl.java:702)
 	at com.practise.hibernate.data.ApplicationCallingPersistanceMethods.main(ApplicationCallingPersistanceMethods.java:27)`
 
+
+Identifiers:
+
+comparing identities: equals(), =
+@GeneratedValue and @TableGenerator tweaks
+- strategy = GenerationType.SEQUENCE, will be used when using Oracle DB, coz it doesn't have auto increment feature like MYSQL, fast
+- strategy = GenerationType.AUTO, default, based on provider: oracle:seq, mysql:identity : PREFERABLE
+- strategy = GenerationType.IDENTITY, slower 
+- strategy = GenerationType.TABLE, generator = "user_table_generator": maintains primary keys in db tables

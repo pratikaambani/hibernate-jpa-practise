@@ -15,7 +15,7 @@ public class ApplicationCallingPersistanceMethods {
 
         User user = new User();
         user.setBirthDate(new Date());
-//      user.setBirthDate(null);
+        user.setBirthDate(new Date());
         user.setCreatedBy("Developer");
         user.setCreatedDate(new Date());
         user.setEmailAddress("send@sender.sending");

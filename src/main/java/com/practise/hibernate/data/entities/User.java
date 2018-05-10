@@ -11,8 +11,13 @@ import java.util.Date;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //strategy = GenerationType.SEQUENCE, will be used when using Oracle DB, coz it doesn't have auto increment feature like MYSQL, fast
+    //strategy = GenerationType.AUTO, default, based on provider: oracle:seq, mysql:identity : PREFERABLE
+    //strategy = GenerationType.IDENTITY, slower
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "user_table_generator")
     @Column(name = "USER_ID")
+    @TableGenerator(name = "user_table_generator",
+            table = "IFINANCES_KEYS", pkColumnName = "PK_NAME", valueColumnName = "PK_VALUE")
     private Long userId;
 
     @Column(name = "FIRST_NAME")
@@ -21,7 +26,7 @@ public class User {
     @Column(name = "LAST_NAME")
     private String lastName;
 
-    @Column(name = "BIRTH_DATE", nullable = false)
+    @Column(name = "BIRTH_DATE")
     private Date birthDate;
 
     @Column(name = "EMAIL_ADDRESS")
