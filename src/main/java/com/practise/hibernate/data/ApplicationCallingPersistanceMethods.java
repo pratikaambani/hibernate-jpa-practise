@@ -15,6 +15,7 @@ public class ApplicationCallingPersistanceMethods {
 
         User user = new User();
         user.setBirthDate(new Date());
+//      user.setBirthDate(null);
         user.setCreatedBy("Developer");
         user.setCreatedDate(new Date());
         user.setEmailAddress("send@sender.sending");
@@ -22,11 +23,18 @@ public class ApplicationCallingPersistanceMethods {
         user.setLastName("Tendulkar");
         user.setLastUpdatedDate(new Date());
         user.setLastUpdatedBy("Pratik");
-
+        //insertion operation
         session.save(user);
-
         //ensures above things are written to database
         session.getTransaction().commit();
+
+        //get operation
+        session.beginTransaction();
+        User dbUser = (User) session.get(User.class, user.getUserId());
+        dbUser.setFirstName("UnSachin");
+        session.update(dbUser);
+        session.getTransaction().commit();
+
         session.close();
     }
 }
