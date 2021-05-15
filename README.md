@@ -346,3 +346,38 @@ Composite + Collection
 @CollectionTable(name="USER_ADDRESS", joinColumns=@JoinColumn(name="USER_ID"))
 List<Address> address = new ArrayList<Address>();
 
+
+
+
+
+Entity Associations
+
+Relationship == Association
+Reference from one entity to another
+Map collections of entity types
+bi and uni directional relationship
+
+Owning Entities and Nonowning Entities
+
+Example: 1-1, 1-*, *-1, *-*
+
+
+1-1
+Unidirectional:
+@OneToOne(cascade)
+@JoinColumn(column_name, reference_column_name):  To persist data that is stored in field, foreign key
+
+Bidirectional Relationships
+@OneToOne(mappedBy)
+
+1-*
+Bank Account Holder: 1Account - *Transacions
+Unidirectional:
+@OneToMany(name, nullable)
+
+Bidirectional:
+@ManyToOne
+@JoinColumn(name)
+
+
+@JoinTable:
