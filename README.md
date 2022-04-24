@@ -394,3 +394,19 @@ And they wanna use it by name with dept combination.
 In this situation it doesn't make sense to have single primary key.
 
 Rather use compositely unique values ==> @Embedded on class and @EmbeddedId on the Class of composite unique fields. Use this class in main class containing @Embedded annotation
+
+Session vs SessionFactory
+=========================
+
+SessionFactorySessionFactory is a factory class for Session objects. It is available for the whole application while a Session is only available for particular transaction.
+SessionFactory is an instance which will create Session objects.
+
+Session:
+Short lived
+Handles first level cache (once db called for get, doesn't give another call)
+Methods: byId(), clear(), close(), contains(), delete(), disconnect(), flush(), save(), update()
+
+SessionFactory:
+Long lived
+Handles second level cache (ex. ehCache)
+Methods: getCacge, isClosed(), openSession(), getCurrentSession()
