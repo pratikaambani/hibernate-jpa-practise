@@ -381,3 +381,16 @@ Bidirectional:
 
 
 @JoinTable:
+
+	
+====================================================================
+
+@Embedded
+
+Usually we primary key in the table but what if,
+example: Employee.Id is primary and people don't wanna search employees by id.
+And they wanna use it by name with dept combination.
+
+In this situation it doesn't make sense to have single primary key.
+
+Rather use compositely unique values ==> @Embedded on class and @EmbeddedId on the Class of composite unique fields. Use this class in main class containing @Embedded annotation
