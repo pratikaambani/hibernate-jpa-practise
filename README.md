@@ -404,9 +404,18 @@ SessionFactory is an instance which will create Session objects.
 Session:
 Short lived
 Handles first level cache (once db called for get, doesn't give another call)
+It is one instance per client/thread/one transaction.
+It is thread not safe.
+It is a heavy weight object, because it maintains datasources, mappings, hibernate configuration information’s etc.
+Sessions will be opened using sessionfactory.openSession() and some database operations will be done finally session will be closed using session.close().
 Methods: byId(), clear(), close(), contains(), delete(), disconnect(), flush(), save(), update()
 
 SessionFactory:
 Long lived
+It is one instance per datasource/database.
+It is thread safe.
+It is a heavy weight object, because it maintains datasources, mappings, hibernate configuration information’s etc.
 Handles second level cache (ex. ehCache)
 Methods: getCacge, isClosed(), openSession(), getCurrentSession()
+SessionFactory is an immutable object and it will be created as singleton while the server initializes itself.
+If you have 5 datasources/databases, then you must create 5 session factory instances.
